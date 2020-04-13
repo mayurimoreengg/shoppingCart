@@ -1,0 +1,33 @@
+<div class="products-container">
+    <h1>All Items</h1>
+
+    <div>
+        <div class="itemName">
+            <h3>Product Name</h3>
+        </div>
+        <div class="itemPrice">
+            <h3>Price Per Product</h3>
+        </div>
+        <div class="count">
+            <h3>Number of items</h3>
+        </div>
+        <div class="addItem">
+            <h3>Action</h3>
+        </div>
+    </div>
+
+    <div *ngFor="let product of products">
+        <div class="itemName">
+            <strong>{{product.productName}}</strong>
+        </div>
+        <div class="itemPrice">
+            {{product.price}}
+        </div>
+        <div class="count">
+            <input type="number" name="count" [(ngModel)]="product.count" pattern="[1-9]+" [max]="product.stock" min="1" title="Please enter number only">
+        </div>
+        <div class="addItem">
+            <button class="addBtn" (click)="EditNumberOfItems(product.productId, product.count)">Add to Cart</button>
+        </div>
+    </div>
+</div>

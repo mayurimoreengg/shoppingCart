@@ -1,0 +1,18 @@
+<nav>
+  <span class="nav-left">
+    <a href="#" class="logoLink"><img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" alt="Logo" width="150"></a>
+  </span>
+  <span class="nav-right">
+    <a routerLink="products" class="productsLinks">All Products</a>
+    <a routerLink="cart" class="cartLink">Cart</a>
+  </span>
+</nav>
+<div class="app-container">
+  <router-outlet></router-outlet>
+</div>
+
+<footer>
+  <span>
+    Total Price : {{cartService.totalPrice}}
+  </span>
+</footer>
